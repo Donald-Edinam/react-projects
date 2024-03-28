@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../components/homepage/Navbar'
+import HeroSection from '../components/homepage/HeroSection'
+import HeroGrid from '../components/HeroGrid'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+  <>
+      <Navbar />
+      <HeroSection />
+      <HeroGrid />
+  </>
   )
 }
 

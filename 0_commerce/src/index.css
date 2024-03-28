@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.h-mod{
+    height: calc(100vh - 160px);
+}
