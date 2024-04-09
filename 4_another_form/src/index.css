@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app{
+    @apply flex flex-col items-center justify-center h-screen;
+}
+
+input {
+    @apply px-4 py-2 rounded-lg border border-gray-300 my-2;
+}
+
+.forminput {
+    @apply flex flex-col ;
+    width: 281px;
+}
+
+label {
+    @apply text-sm;
+}
+
+p.errorInfo {   
+    @apply text-red-500 text-xs px-1;
+    display: none;
+}
+
+input:invalid[focused="true"]{
+    @apply border-red-500;
+}
+
+input:invalid[focused="true"] ~ p.errorInfo {
+    display: block;
+}   
