@@ -30,7 +30,7 @@ const Signup = () => {
             type: 'email',
             placeholder: 'Email',
             errorMesssage: 'Please enter a valid email',
-            pattern: '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$',
+            pattern: "",
             label: 'Email',
         },
         {
