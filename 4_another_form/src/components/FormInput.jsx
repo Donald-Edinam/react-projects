@@ -19,7 +19,7 @@ const FormInput = ({id, label, onChange,pattern,  userInfoValue, errorMessage, p
             onChange={onChange} 
             placeholder={placeholder}
             onBlur={handleFocus}
-            onFocus={name === "confirmPassword" && setFocused(true)}
+            // onFocus={name === "confirmPassword" && setFocused(true)}
             focused={focused.toString()}
             />
             <p className='errorInfo'>{errorMessage}</p>
