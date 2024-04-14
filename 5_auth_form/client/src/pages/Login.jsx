@@ -6,23 +6,46 @@ const Login = () => {
 
     // Handle form input
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')    
-    const navigate  = useNavigate()
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
 
 
-    const SIGN_UP_URL = "http://localhost:3001/login"
+    const SIGN_UP_URL = "https://dummyjson.com/auth/login"
+
+    function handlePostRequest() {
+        fetch(SIGN_UP_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+
+                username: 'kminchelle',
+                password: '0lelplR',
+                expiresInMins: 30, // optional, defaults to 60
+            })
+        })
+            .then(res => res.json())
+            .then(console.log);
+
+    }
 
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(SIGN_UP_URL, {email, password})
-        .then(result => {
-            console.log(result)
-            if(result.data === "Success"){
-                navigate("/home")
-            }
-        })
-    }
+
+        // axios.post(SIGN_UP_URL, {email, password})
+        // .then(result => {
+        //     console.log(result)
+        //     if(result.data === "Success"){
+        //         navigate("/home")
+        //     }else{
+        //         navigate("/register");
+        //         alert("You are not registered for this service");
+        //     }
+        // })
+        // .catch(err => (
+        //     console.log(err)
+        // ))
+    };
 
     return (
         <div>
