@@ -6,14 +6,19 @@ const ContactManager = ({ data }) => {
 
     const [contacts, setContacts] = useState(data);
 
-    const addPerson = () => {
-        setContacts([...contacts, ])
+    const addPerson = (name) => {
+        setContacts([...contacts, name])
     }
+
+    // Remove Person
+    const removePerson = (name) => {
+      setContacts(contacts.filter(contact => contact !== name));
+    };
 
   return (
    <>
-    <AddPersonForm />
-    <PeopleList data={contacts}/>
+    <AddPersonForm handleAddPerson={addPerson}/>
+    <PeopleList data={contacts} handleRemovePerson={removePerson}/>
    </>
   )
 }
