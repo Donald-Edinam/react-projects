@@ -53,6 +53,17 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(userInfo)
+        fetch('http://localhost:4000/api/v1/users/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err)) 
+
     }
 
     const onChange = (e) => {
