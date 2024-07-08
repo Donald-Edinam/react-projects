@@ -15,6 +15,9 @@ const Signup = () => {
 
     // const [errorMessage, setErrorMessage] = useState('')
 
+    const PASSWORDREGEX  = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/;
+    const COMPLEX_REGEX = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,23}$/;
+
     const inputs = [
         {
             id: 'username',
@@ -30,14 +33,13 @@ const Signup = () => {
             type: 'email',
             placeholder: 'Email',
             errorMesssage: 'Please enter a valid email',
-            pattern: "",
             label: 'Email',
         },
         {
             id: 'password',
             type: 'password',
             placeholder: 'Password',
-            pattern: '^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$',
+            pattern: PASSWORDREGEX,
             errorMesssage: 'Password should be at least 8 characters long and contain at least one number and one special character ',
             label: 'Password',
         },
